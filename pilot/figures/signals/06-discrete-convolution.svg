@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760"><rect width="1120" height="760" fill="#f6f8fc"/><style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif}.title{font-size:30px;font-weight:700;fill:#132c4a}.sub{font-size:16px;fill:#49617b}.pt{font-size:18px;font-weight:700;fill:#12304f}.lab{font-size:15px;fill:#29445f}.small{font-size:13px;fill:#48617a}.eq{font-size:20px;font-weight:700;fill:#12304f}.blue{stroke:#1769aa}.orange{stroke:#e1782f}</style><text x="52" y="56" class="title">例题：逐项配对求离散卷积</text><text x="52" y="84" class="sub">x[0..1]=[1,2]，h[0..1]=[3,4]；乘积按索引和 n=k+m 分组。</text>
+<rect x="42" y="112" width="500" height="265" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="64" y="146" class="pt">输入 x[k]</text>
+<line x1="100" y1="320" x2="500" y2="320" stroke="#6e8297" stroke-width="2"/>
+<line x1="100" y1="320" x2="100" y2="165" stroke="#6e8297" stroke-width="2"/>
+<text x="500" y="346" text-anchor="end" class="small">k</text>
+<text x="105" y="153" text-anchor="start" class="small">x[k]</text>
+<line x1="210" y1="320" x2="210" y2="275" stroke="#1769aa" stroke-width="4"/>
+<circle cx="210" cy="275" r="6" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="210" y="350" text-anchor="middle" class="small">0</text>
+<text x="210" y="263" text-anchor="middle" class="lab">1</text>
+<line x1="360" y1="320" x2="360" y2="230" stroke="#1769aa" stroke-width="4"/>
+<circle cx="360" cy="230" r="6" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="360" y="350" text-anchor="middle" class="small">1</text>
+<text x="360" y="218" text-anchor="middle" class="lab">2</text>
+<rect x="570" y="112" width="508" height="265" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="592" y="146" class="pt">冲激响应 h[m]</text>
+<line x1="625" y1="320" x2="1030" y2="320" stroke="#6e8297" stroke-width="2"/>
+<line x1="625" y1="320" x2="625" y2="165" stroke="#6e8297" stroke-width="2"/>
+<text x="1030" y="346" text-anchor="end" class="small">m</text>
+<text x="630" y="153" text-anchor="start" class="small">h[m]</text>
+<line x1="735" y1="320" x2="735" y2="236" stroke="#e1782f" stroke-width="4"/>
+<circle cx="735" cy="236" r="6" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="735" y="350" text-anchor="middle" class="small">0</text>
+<text x="735" y="224" text-anchor="middle" class="lab">3</text>
+<line x1="885" y1="320" x2="885" y2="208" stroke="#e1782f" stroke-width="4"/>
+<circle cx="885" cy="208" r="6" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="885" y="350" text-anchor="middle" class="small">1</text>
+<text x="885" y="196" text-anchor="middle" class="lab">4</text>
+<rect x="42" y="410" width="1036" height="290" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="64" y="444" class="pt">按输出索引合并乘积</text>
+<text x="100" y="485" text-anchor="start" class="pt">n=0</text>
+<text x="100" y="535" text-anchor="start" class="eq">1×3</text>
+<text x="100" y="590" text-anchor="start" class="pt">y[0] = 3</text>
+<line x1="345" y1="470" x2="345" y2="625" stroke="#e3eaf2" stroke-width="1"/>
+<text x="430" y="485" text-anchor="start" class="pt">n=1</text>
+<text x="430" y="535" text-anchor="start" class="eq">1×4 + 2×3</text>
+<text x="430" y="590" text-anchor="start" class="pt">y[1] = 10</text>
+<line x1="675" y1="470" x2="675" y2="625" stroke="#e3eaf2" stroke-width="1"/>
+<text x="760" y="485" text-anchor="start" class="pt">n=2</text>
+<text x="760" y="535" text-anchor="start" class="eq">2×4</text>
+<text x="760" y="590" text-anchor="start" class="pt">y[2] = 8</text>
+<text x="100" y="660" text-anchor="start" class="eq">输出序列 y[0..2] = [3, 10, 8]</text>
+</svg>

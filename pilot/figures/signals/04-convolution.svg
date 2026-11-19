@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760"><rect width="1120" height="760" fill="#f6f8fc"/><style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif}.title{font-size:30px;font-weight:700;fill:#132c4a}.sub{font-size:16px;fill:#49617b}.pt{font-size:18px;font-weight:700;fill:#12304f}.lab{font-size:15px;fill:#29445f}.small{font-size:13px;fill:#48617a}.eq{font-size:20px;font-weight:700;fill:#12304f}.blue{stroke:#1769aa}.orange{stroke:#e1782f}</style><text x="52" y="56" class="title">例题：两个单位矩形的卷积</text><text x="52" y="84" class="sub">固定 x(τ)=1 于 [0,2]；移动 h(t−τ) 后，卷积等于重叠长度。</text>
+<rect x="42" y="112" width="508" height="265" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="64" y="146" class="pt">t=1：重叠区间 [0,1]</text>
+<line x1="77" y1="315" x2="512" y2="315" stroke="#8194a8" stroke-width="2"/>
+<polyline points="222,315 222,205 392,205 392,315" fill="none" stroke="#1769aa" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="137,315 137,230 307,230 307,315" fill="none" stroke="#e1782f" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="222" y="205" width="85" height="110" fill="#e8f2fa" opacity="0.85"/>
+<line x1="222" y1="205" x2="222" y2="315" stroke="#1769aa" stroke-width="2" stroke-dasharray="4 4"/>
+<line x1="307" y1="205" x2="307" y2="315" stroke="#1769aa" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="67" y="350" text-anchor="start" class="small">蓝：x(τ)    橙：h(t−τ)</text>
+<text x="402" y="350" text-anchor="start" class="eq">y(t)=1</text>
+<rect x="570" y="112" width="508" height="265" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="592" y="146" class="pt">t=3：重叠区间 [1,2]</text>
+<line x1="605" y1="315" x2="1040" y2="315" stroke="#8194a8" stroke-width="2"/>
+<polyline points="750,315 750,205 920,205 920,315" fill="none" stroke="#1769aa" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="835,315 835,230 1005,230 1005,315" fill="none" stroke="#e1782f" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="835" y="205" width="85" height="110" fill="#e8f2fa" opacity="0.85"/>
+<line x1="835" y1="205" x2="835" y2="315" stroke="#1769aa" stroke-width="2" stroke-dasharray="4 4"/>
+<line x1="920" y1="205" x2="920" y2="315" stroke="#1769aa" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="595" y="350" text-anchor="start" class="small">蓝：x(τ)    橙：h(t−τ)</text>
+<text x="930" y="350" text-anchor="start" class="eq">y(t)=1</text>
+<rect x="42" y="418" width="1036" height="282" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="64" y="452" class="pt">逐步移动得到三角形输出</text>
+<line x1="135" y1="650" x2="1000" y2="650" stroke="#6e8297" stroke-width="2"/>
+<line x1="135" y1="650" x2="135" y2="475" stroke="#6e8297" stroke-width="2"/>
+<text x="1000" y="676" text-anchor="end" class="small">t</text>
+<text x="140" y="463" text-anchor="start" class="small">y(t)</text>
+<polyline points="135,650 568,510 1000,650" fill="none" stroke="#1769aa" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="135" y1="650" x2="1000" y2="650" stroke="#8194a8" stroke-width="1"/>
+<circle cx="351" cy="580" r="6" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<circle cx="568" cy="510" r="6" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<circle cx="784" cy="580" r="6" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="351" y="678" text-anchor="middle" class="small">1</text>
+<text x="568" y="678" text-anchor="middle" class="small">2</text>
+<text x="784" y="678" text-anchor="middle" class="small">3</text>
+<text x="568" y="490" text-anchor="middle" class="lab">峰值 y(2)=2</text>
+<text x="351" y="560" text-anchor="middle" class="small">y(1)=1</text>
+<text x="784" y="560" text-anchor="middle" class="small">y(3)=1</text>
+</svg>

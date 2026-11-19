@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PN 结的正偏与反偏</title>
+<link rel="stylesheet" href="/study.css">
+<link rel="stylesheet" href="/study-interface.css">
+<body class="companion-layout">
+<main>
+  <header class="study-header" hidden>
+    <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"></span>学习台</a>
+    <nav class="study-nav" aria-label="本章导航"><a href="#curriculum">讲解</a><a href="#lab-directory" data-experiment-link>动手实验</a><a href="#question-bank">题库</a><a href="#notes">笔记</a></nav>
+    <a href="#companion" id="companion-toggle" aria-controls="companion">AI 伴学</a>
+  </header>
+  <div class="workspace">
+  <article class="lesson">
+  <header class="lesson-hero">
+    <p class="course-label" hidden>模拟电子技术 · 第一章</p>
+    <h1>PN 结的正偏与反偏</h1>
+    <p class="source"><a id="source" target="_blank" rel="noopener" href="../课件样板/模电第一章.pdf#page=48">原课件 · 第 48 至 52 页 ↗</a></p>
+  </header>
+  <section class="panel experiment" id="experiment" tabindex="-1" aria-label="PN 结分步演示">
+    <div class="experiment-heading"><h2>偏置实验</h2><p>改变偏置，观察耗尽区</p></div>
+    <div class="controls" aria-label="偏置状态">
+      <button type="button" data-bias="1">正向偏置</button>
+      <button type="button" data-bias="0">零偏置</button>
+      <button type="button" data-bias="-1">反向偏置</button>
+      <button type="button" id="advance">下一步</button>
+    </div>
+    <div class="junction" aria-label="点击示意图查看各区域">
+      <button type="button" id="p">P 区<small>空穴</small></button>
+      <button type="button" id="n">N 区<small>电子</small></button>
+      <button type="button" id="depletion">耗尽区</button>
+      <canvas id="ink" aria-hidden="true" hidden></canvas>
+    </div>
+    <div class="mark-tools" hidden>
+      <button type="button" id="draw" aria-pressed="false">圈画</button>
+      <button type="button" id="undo-ink" disabled>撤销圈画</button>
+      <button type="button" id="quote" disabled>引用选中文字</button>
+    </div>
+    <div class="field" id="field"></div>
+    <p id="detail" class="detail" aria-live="polite">点击图中的任一区域，查看载流子和固定离子的作用。</p>
+    <label for="bias">调整外加偏置</label>
+    <input id="bias" type="range" min="-1" max="1" step="0.05" value="0">
+    <div class="endpoints"><span>反偏</span><span>零偏</span><span>正偏</span></div>
+    <p id="summary" aria-live="polite"></p>
+    <p class="source">示意图用于比较耗尽区宽度的变化趋势。滑块表示相对偏置强弱。</p>
+  </section>
+  <section class="panel" id="review" hidden>
+    <h2>两题自测</h2>
+    <form id="quiz">
+      <fieldset>
+        <legend>1. P 区接正极、N 区接负极，耗尽区如何变化？</legend>
+        <label><input required type="radio" name="forward" value="narrow"> 变窄</label>
+        <label><input type="radio" name="forward" value="wide"> 变宽</label>
+      </fieldset>
+      <fieldset>
+        <legend>2. 反偏且未击穿时，电流主要来自什么？</legend>
+        <label><input required type="radio" name="reverse" value="diffusion"> 多数载流子扩散</label>
+        <label><input type="radio" name="reverse" value="drift"> 少数载流子漂移</label>
+      </fieldset>
+      <button>查看答案</button>
+      <button type="button" id="retry">重新答题</button>
+    </form>
+    <div id="quiz-result" aria-live="polite"></div>
+    <h2><label for="notes">我的笔记</label></h2>
+    <textarea id="notes" rows="4" placeholder="记下还想复习的知识点"></textarea>
+    <p class="source" id="save-status" role="status">学习记录保存在当前浏览器。</p>
+  </section>
+  </article>
+  <aside class="companion" id="companion" aria-label="AI 伴学" hidden>
+    <button type="button" class="sheet-handle" aria-label="收起 AI 伴学"></button>
+    <header class="companion-header">
+      <div class="companion-title"><h2><span class="companion-mark" aria-hidden="true">✦</span>AI 伴学</h2><div class="companion-header-actions"><button type="button" id="revise-turn" hidden>重问上一题</button><button type="button" id="companion-close" aria-label="收起 AI 伴学">×</button></div></div>
+      <label class="companion-channel"><span>模型</span><select id="companion-model">
+        <option value="codex">Codex · 6 Luna</option>
+        <option value="deepseek-flash">DeepSeek · Flash</option>
+        <option value="deepseek-v4-pro">DeepSeek · Pro</option>
+      </select></label>
+      <label class="companion-key" id="companion-key-field" hidden><span>DeepSeek API Key</span>
+        <input id="companion-key" type="password" autocomplete="off" spellcheck="false" maxlength="256" placeholder="输入后本次打开期间可用">
+      </label>
+      <div class="context-box"><span id="ask-context"></span><a id="pn-context-source" href="#curriculum" data-experiment-link hidden>回到题目</a><button type="button" id="remove-quote" hidden>移除引用</button></div>
+    </header>
+    <div class="transcript">
+      <p class="companion-intro">圈画图中一处，或引用一段讲解再问。</p>
+      <div class="quick-prompts">
+        <button type="button" data-prompt="根据当前步骤，只给我一个起步提示，我想自己接着做。">给我一步提示</button>
+        <button type="button" data-prompt="请把本节的要点用简单的话讲一遍。">讲讲本节要点</button>
+        <button type="button" data-prompt="根据当前这节课出一道题，先让我回答。">考我一道题</button>
+      </div>
+      <div id="messages" role="log" aria-label="伴学对话"></div>
+    </div>
+    <form class="ask-form" id="ask-form">
+      <button type="button" id="view-new-reply" hidden>查看新回复</button>
+      <textarea id="question" rows="2" aria-label="向 AI 伴学提问" maxlength="1500" placeholder="问问这一节…"></textarea>
+      <div class="ask-actions"><p id="ask-status" role="status"></p><button id="ask-send">发送</button></div>
+    </form>
+  </aside>
+  </div>
+</main>
+<button type="button" id="quote-selection" hidden>引用给 AI 伴学</button>
+<script>
+  const input = document.querySelector('#bias');
+  const junction = document.querySelector('.junction');
+  const presets = [...document.querySelectorAll('[data-bias]')];
+  const advance = document.querySelector('#advance');
+  const field = document.querySelector('#field');
+  const summary = document.querySelector('#summary');
+  const detail = document.querySelector('#detail');
+  const lessonState = {
+    id: 'pn-junction',
+    current: () => ({ '-1': '反向偏置', '0': '零偏置', '1': '正向偏置' })[Math.sign(Number(input.value))],
+    labels: ['P 区', '耗尽区', 'N 区'],
+    region: x => {
+      const halfWidth = (26 - Number(input.value) * 14) / 200;
+      return x < 0.5 - halfWidth ? 0 : x > 0.5 + halfWidth ? 2 : 1;
+    },
+  };
+  const standalone = window.self === window.top;
+  const storageKey = 'personal-study-pn-junction-v1';
+  const saveStatus = document.querySelector('#save-status');
+  let saved = {};
+
+  if (standalone) {
+    document.querySelector('#review').hidden = false;
+    try {
+      saved = JSON.parse(localStorage.getItem(storageKey)) || {};
+    } catch {
+      saveStatus.textContent = '浏览器未能读取学习记录。';
+    }
+  }
+
+  function save(patch) {
+    if (!standalone) return;
+    Object.assign(saved, patch);
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(saved));
+    } catch {
+      saveStatus.textContent = '浏览器未能保存学习记录。';
+    }
+  }
+  const explanations = {
+    p: 'P 区的多数载流子是空穴。正偏时，空穴更容易向 N 区扩散。',
+    n: 'N 区的多数载流子是电子。正偏时，电子更容易向 P 区扩散。',
+    depletion: '交界处缺少可移动的多数载流子，留下 P 侧的负离子和 N 侧的正离子，形成从 N 指向 P 的内电场。',
+  };
+  const states = {
+    '-1': ['P ← N　内电场与外加电场同向', '耗尽区变宽，多数载流子扩散受抑制。击穿前只有很小的反向电流。'],
+    '0': ['P ← N　内电场', '扩散与漂移达到动态平衡，净电流为零。'],
+    '1': ['P ← N　内电场　｜　P → N　外加电场', '耗尽区变窄，多数载流子更容易通过，正向扩散电流增大。'],
+  };
+  const sequence = [0, 1, -1];
+  let step = 0;
+
+  function update(value) {
+    input.value = value;
+    const direction = Math.sign(value);
+    junction.style.setProperty('--depletion', `${26 - value * 14}%`);
+    presets.forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.bias) === direction)));
+    field.textContent = states[direction][0];
+    summary.textContent = states[direction][1];
+    step = sequence.indexOf(direction);
+    advance.textContent = step === sequence.length - 1 ? '重播' : '下一步';
+    save({ bias: value });
+    input.dispatchEvent(new Event('bias-updated'));
+  }
+
+  presets.forEach(button => button.addEventListener('click', () => update(Number(button.dataset.bias))));
+  input.addEventListener('input', () => update(Number(input.value)));
+  advance.addEventListener('click', () => update(sequence[(step + 1) % sequence.length]));
+  Object.entries(explanations).forEach(([id, text]) => {
+    document.getElementById(id).addEventListener('click', () => { detail.textContent = text; });
+  });
+  update(Number.isFinite(saved.bias) ? saved.bias : 0);
+
+  if (standalone) {
+    const notes = document.querySelector('#notes');
+    notes.value = saved.notes ?? '';
+    notes.addEventListener('input', () => save({ notes: notes.value }));
+    window.chapterRuntime = { lessonState, input, field, summary, saved, save, junction };
+  }
+
+  const quiz = document.querySelector('#quiz');
+  if (standalone && quiz) {
+    const result = document.querySelector('#quiz-result');
+    const questions = [
+      { name: 'forward', answer: 'narrow', explanation: '正偏削弱内电场，耗尽区变窄。见课件第 48 至 49 页。' },
+      { name: 'reverse', answer: 'drift', explanation: '反偏时，少数载流子漂移形成小的反向电流。见课件第 50 至 52 页。' },
+    ];
+
+    function showResult(answers) {
+      result.replaceChildren(...questions.map((question, index) => {
+        const item = document.createElement('p');
+        const correct = answers[question.name] === question.answer;
+        item.textContent = `第 ${index + 1} 题${correct ? '正确' : '待复习'}。${question.explanation}`;
+        return item;
+      }));
+    }
+
+    if (saved.answers) {
+      for (const question of questions) quiz.elements[question.name].value = saved.answers[question.name];
+      showResult(saved.answers);
+    }
+    document.querySelector('#retry').addEventListener('click', () => {
+      quiz.reset();
+      result.replaceChildren();
+      save({ answers: null });
+    });
+    quiz.addEventListener('submit', event => {
+      event.preventDefault();
+      const answers = Object.fromEntries(new FormData(quiz));
+      showResult(answers);
+      save({ answers });
+    });
+  }
+</script>
+</body>
+</html>

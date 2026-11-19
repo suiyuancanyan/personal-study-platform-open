@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760"><rect width="1120" height="760" fill="#f6f8fc"/><style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif}.title{font-size:30px;font-weight:700;fill:#132c4a}.sub{font-size:16px;fill:#49617b}.pt{font-size:18px;font-weight:700;fill:#12304f}.lab{font-size:15px;fill:#29445f}.small{font-size:13px;fill:#48617a}.eq{font-size:20px;font-weight:700;fill:#12304f}.blue{stroke:#1769aa}.orange{stroke:#e1782f}</style><text x="52" y="56" class="title">例题：几何序列的 Z 变换和收敛域</text><text x="52" y="84" class="sub">x[n]=(0.5)ⁿu[n]：等比级数公比为 0.5/z，要求 |z|&gt;0.5。</text>
+<rect x="42" y="112" width="500" height="550" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="64" y="146" class="pt">右边序列</text>
+<line x1="105" y1="570" x2="500" y2="570" stroke="#6e8297" stroke-width="2"/>
+<line x1="105" y1="570" x2="105" y2="195" stroke="#6e8297" stroke-width="2"/>
+<text x="500" y="596" text-anchor="end" class="small">n</text>
+<text x="110" y="183" text-anchor="start" class="small">x[n]</text>
+<line x1="140" y1="570" x2="140" y2="270.0" stroke="#1769aa" stroke-width="3"/>
+<circle cx="140" cy="270.0" r="4" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="140" y="595" text-anchor="middle" class="small">0</text>
+<line x1="179" y1="570" x2="179" y2="420.0" stroke="#1769aa" stroke-width="3"/>
+<circle cx="179" cy="420.0" r="4" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="179" y="595" text-anchor="middle" class="small">1</text>
+<line x1="218" y1="570" x2="218" y2="495.0" stroke="#1769aa" stroke-width="3"/>
+<circle cx="218" cy="495.0" r="4" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="218" y="595" text-anchor="middle" class="small">2</text>
+<line x1="257" y1="570" x2="257" y2="532.5" stroke="#1769aa" stroke-width="3"/>
+<circle cx="257" cy="532.5" r="4" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="257" y="595" text-anchor="middle" class="small">3</text>
+<line x1="296" y1="570" x2="296" y2="551.25" stroke="#1769aa" stroke-width="3"/>
+<circle cx="296" cy="551.25" r="4" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="296" y="595" text-anchor="middle" class="small">4</text>
+<line x1="335" y1="570" x2="335" y2="560.625" stroke="#1769aa" stroke-width="3"/>
+<circle cx="335" cy="560.625" r="4" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="335" y="595" text-anchor="middle" class="small">5</text>
+<line x1="374" y1="570" x2="374" y2="565.3125" stroke="#1769aa" stroke-width="3"/>
+<circle cx="374" cy="565.3125" r="4" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="374" y="595" text-anchor="middle" class="small">6</text>
+<line x1="413" y1="570" x2="413" y2="567.65625" stroke="#1769aa" stroke-width="3"/>
+<circle cx="413" cy="567.65625" r="4" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="413" y="595" text-anchor="middle" class="small">7</text>
+<line x1="452" y1="570" x2="452" y2="568.828125" stroke="#1769aa" stroke-width="3"/>
+<circle cx="452" cy="568.828125" r="4" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="452" y="595" text-anchor="middle" class="small">8</text>
+<text x="120" y="635" text-anchor="start" class="eq">X(z)=1/(1−0.5z⁻¹)</text>
+<rect x="570" y="112" width="508" height="550" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="592" y="146" class="pt">z 平面：ROC 在半径 0.5 外侧</text>
+<rect x="650" y="190" width="370" height="360" fill="#e6f4ec"/>
+<circle cx="820" cy="390" r="145" fill="none" stroke="#3d8b67" stroke-width="3"/>
+<circle cx="820" cy="390" r="72" fill="#fff" stroke="#e1782f" stroke-width="3" stroke-dasharray="8 6"/>
+<line x1="660" y1="390" x2="1030" y2="390" stroke="#4d637a" stroke-width="2"/>
+<line x1="820" y1="555" x2="820" y2="205" stroke="#4d637a" stroke-width="2"/>
+<circle cx="892" cy="390" r="7" fill="#d04b42"/>
+<text x="900" y="378" text-anchor="start" class="small">极点 0.5</text>
+<text x="820" y="235" text-anchor="middle" class="lab">单位圆 |z|=1</text>
+<text x="895" y="500" text-anchor="middle" class="eq">|z|&gt;0.5</text>
+<text x="820" y="590" text-anchor="middle" class="lab">单位圆包含在 ROC 内 → 频率响应存在</text>
+</svg>

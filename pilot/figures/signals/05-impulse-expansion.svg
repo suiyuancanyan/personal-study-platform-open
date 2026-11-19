@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760"><rect width="1120" height="760" fill="#f6f8fc"/><style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif}.title{font-size:30px;font-weight:700;fill:#132c4a}.sub{font-size:16px;fill:#49617b}.pt{font-size:18px;font-weight:700;fill:#12304f}.lab{font-size:15px;fill:#29445f}.small{font-size:13px;fill:#48617a}.eq{font-size:20px;font-weight:700;fill:#12304f}.blue{stroke:#1769aa}.orange{stroke:#e1782f}</style><text x="52" y="56" class="title">例题：把序列写成移位单位脉冲</text><text x="52" y="84" class="sub">x[−1]=2，x[1]=−1，其余为零；只在整数索引上定义样本。</text>
+<rect x="42" y="112" width="1036" height="270" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="64" y="146" class="pt">样本序列 x[n]</text>
+<line x1="120" y1="330" x2="1000" y2="330" stroke="#6e8297" stroke-width="2"/>
+<line x1="120" y1="330" x2="120" y2="165" stroke="#6e8297" stroke-width="2"/>
+<text x="1000" y="356" text-anchor="end" class="small">n</text>
+<text x="125" y="153" text-anchor="start" class="small">x[n]</text>
+<line x1="220" y1="250" x2="220" y2="250" stroke="#1769aa" stroke-width="4"/>
+<circle cx="220" cy="250" r="5" fill="#1769aa" stroke="#fff" stroke-width="2"/>
+<text x="220" y="355" text-anchor="middle" class="small">-3</text>
+<line x1="325" y1="250" x2="325" y2="250" stroke="#1769aa" stroke-width="4"/>
+<circle cx="325" cy="250" r="5" fill="#1769aa" stroke="#fff" stroke-width="2"/>
+<text x="325" y="355" text-anchor="middle" class="small">-2</text>
+<line x1="430" y1="250" x2="430" y2="200" stroke="#1769aa" stroke-width="4"/>
+<circle cx="430" cy="200" r="5" fill="#1769aa" stroke="#fff" stroke-width="2"/>
+<text x="430" y="355" text-anchor="middle" class="small">-1</text>
+<line x1="535" y1="250" x2="535" y2="250" stroke="#1769aa" stroke-width="4"/>
+<circle cx="535" cy="250" r="5" fill="#1769aa" stroke="#fff" stroke-width="2"/>
+<text x="535" y="355" text-anchor="middle" class="small">0</text>
+<line x1="640" y1="250" x2="640" y2="315" stroke="#1769aa" stroke-width="4"/>
+<circle cx="640" cy="315" r="5" fill="#1769aa" stroke="#fff" stroke-width="2"/>
+<text x="640" y="355" text-anchor="middle" class="small">1</text>
+<line x1="745" y1="250" x2="745" y2="250" stroke="#1769aa" stroke-width="4"/>
+<circle cx="745" cy="250" r="5" fill="#1769aa" stroke="#fff" stroke-width="2"/>
+<text x="745" y="355" text-anchor="middle" class="small">2</text>
+<line x1="850" y1="250" x2="850" y2="250" stroke="#1769aa" stroke-width="4"/>
+<circle cx="850" cy="250" r="5" fill="#1769aa" stroke="#fff" stroke-width="2"/>
+<text x="850" y="355" text-anchor="middle" class="small">3</text>
+<text x="360" y="195" text-anchor="start" class="lab">2</text>
+<text x="635" y="310" text-anchor="start" class="lab">−1</text>
+<rect x="42" y="410" width="1036" height="290" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="64" y="444" class="pt">每个样本对应一项 δ[n−k]</text>
+<text x="95" y="490" text-anchor="start" class="pt">n=−1</text>
+<text x="330" y="490" text-anchor="start" class="pt">n=1</text>
+<text x="95" y="545" text-anchor="start" class="eq">2δ[n−(−1)]</text>
+<text x="330" y="545" text-anchor="start" class="eq">−1·δ[n−1]</text>
+<line x1="285" y1="465" x2="285" y2="600" stroke="#e3eaf2" stroke-width="1"/>
+<text x="95" y="635" text-anchor="start" class="eq">x[n] = 2δ[n+1] − δ[n−1]</text>
+<text x="610" y="545" text-anchor="start" class="lab">移位脉冲的位置 = 样本索引</text>
+<text x="610" y="580" text-anchor="start" class="lab">脉冲权重 = 该点的样本值</text>
+</svg>

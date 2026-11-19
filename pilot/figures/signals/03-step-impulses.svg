@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760"><rect width="1120" height="760" fill="#f6f8fc"/><style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif}.title{font-size:30px;font-weight:700;fill:#132c4a}.sub{font-size:16px;fill:#49617b}.pt{font-size:18px;font-weight:700;fill:#12304f}.lab{font-size:15px;fill:#29445f}.small{font-size:13px;fill:#48617a}.eq{font-size:20px;font-weight:700;fill:#12304f}.blue{stroke:#1769aa}.orange{stroke:#e1782f}</style><text x="52" y="56" class="title">例题：阶跃窗与冲激导数</text><text x="52" y="84" class="sub">x(t)=3[u(t−1)−u(t−4)]：两阶跃打开和关闭一个高 3、宽 3 的矩形。</text>
+<rect x="42" y="112" width="1036" height="278" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="64" y="146" class="pt">阶跃相减形成矩形</text>
+<line x1="120" y1="340" x2="1000" y2="340" stroke="#6e8297" stroke-width="2"/>
+<line x1="120" y1="340" x2="120" y2="165" stroke="#6e8297" stroke-width="2"/>
+<text x="1000" y="366" text-anchor="end" class="small">t</text>
+<text x="125" y="153" text-anchor="start" class="small">x(t)</text>
+<polyline points="145,340 350,340 350,205 795,205 795,340 970,340" fill="none" stroke="#1769aa" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="350" y1="205" x2="350" y2="340" stroke="#d5dee8" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="795" y1="205" x2="795" y2="340" stroke="#d5dee8" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="350" y="365" text-anchor="middle" class="small">1</text>
+<text x="795" y="365" text-anchor="middle" class="small">4</text>
+<text x="220" y="250" text-anchor="start" class="lab">0</text>
+<text x="510" y="190" text-anchor="start" class="lab">3</text>
+<text x="835" y="250" text-anchor="start" class="lab">0</text>
+<rect x="42" y="418" width="1036" height="282" rx="18" fill="#fff" stroke="#d8e2ee"/><text x="64" y="452" class="pt">导数只在跳变处留下冲激</text>
+<line x1="120" y1="655" x2="1000" y2="655" stroke="#6e8297" stroke-width="2"/>
+<line x1="120" y1="655" x2="120" y2="475" stroke="#6e8297" stroke-width="2"/>
+<text x="1000" y="681" text-anchor="end" class="small">t</text>
+<text x="125" y="463" text-anchor="start" class="small">x′</text>
+<line x1="350" y1="655" x2="350" y2="525" stroke="#e1782f" stroke-width="4"/>
+<line x1="795" y1="525" x2="795" y2="655" stroke="#e1782f" stroke-width="4"/>
+<circle cx="350" cy="525" r="7" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<circle cx="795" cy="525" r="7" fill="#e1782f" stroke="#fff" stroke-width="2"/>
+<text x="350" y="685" text-anchor="middle" class="lab">+3δ(t−1)</text>
+<text x="795" y="685" text-anchor="middle" class="lab">−3δ(t−4)</text>
+<text x="500" y="515" text-anchor="middle" class="eq">x′(t)=3δ(t−1)−3δ(t−4)</text>
+</svg>

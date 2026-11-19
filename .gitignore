@@ -1,0 +1,8 @@
+/.local/
+/openmaic/
+/课件样板/
+
+/materials/
+node_modules/
+.env
+.env.*
